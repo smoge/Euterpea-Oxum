@@ -3,10 +3,10 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 
-module Control.Arrow.ArrowP (
   -- | The ArrowP type wrapper and associated functions
-  ArrowP(..),
-  strip
+
+module Control.Arrow.ArrowP (
+  ArrowP(..)
 ) where
 
 import Control.Arrow
@@ -19,8 +19,8 @@ import Prelude hiding (id, (.))
 -- their runtime behavior.
 --
 -- Examples:
--- >>> let f = arr (+1) :: ArrowP (->) Int Int Int
--- >>> strip f 5
+-- > let f = arr (+1) :: ArrowP (->) Int Int Int
+-- > strip f 5
 -- 6
 newtype ArrowP a p b c = ArrowP {
   -- | Unwraps an ArrowP to get the underlying arrow.
